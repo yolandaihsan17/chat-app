@@ -26,7 +26,7 @@ To test it (chat with other user), you can login into another account using inco
 
 To add other user id:
 1. Click on your profile picture
-2. Copy and paste it into "add user" input
+2. Copy and paste your id into "add user" input
 
 ## Learn More
 

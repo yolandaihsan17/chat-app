@@ -2,8 +2,9 @@
 import { auth } from "@/firebase/config";
 import { useAuth } from "@/hooks/auth-context";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getDatabase, ref, update } from "firebase/database";
 import { useRouter } from "next/navigation";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 
 const provider = new GoogleAuthProvider();
 
@@ -23,9 +24,17 @@ export default function Login() {
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         if (!credential) return;
+        const { user } = result;
+        const database = getDatabase();
+        const newData = {
+          name: user.displayName,
+          email: user.email,
+        };
+        //create users data
+        let updates: any = {};
+        updates[`/users/${user.uid}`] = newData;
+        update(ref(database), updates);
         router.push("/");
-        const token = credential.accessToken;
-        const user = result.user;
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -45,8 +45,13 @@ export const AccountPopover = (props: any) => {
         }}
       >
         <Typography variant="overline">Account</Typography>
-        <Typography color="text.secondary" variant="body2">
-          {"User Name"}
+        <Typography
+          color="text.secondary"
+          variant="body2"
+          whiteSpace={"break-spaces"}
+          sx={{ wordBreak: "break-all" }}
+        >
+          <strong>ID:</strong> {authContext.user?.uid}
         </Typography>
       </Box>
       <Divider />

@@ -20,6 +20,14 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## NOTE
+I intentionally leave the credentials into the file so you can test the application. i might delete it in 1 month.
+To test it (chat with other user), you can login into another account using incognito mode or using other browser. so you have 2 account logged in.
+
+To add other user id:
+1. Click on your profile picture
+2. Copy and paste it into "add user" input
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
